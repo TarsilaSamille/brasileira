@@ -1,0 +1,3 @@
+principal test {
+  inteiro x = 8 + 2 + 4;
+}
