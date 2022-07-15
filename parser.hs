@@ -16,10 +16,6 @@ idToken = tokenPrim show update_pos get_token where
   get_token (Id x p) = Just (Id x p)
   get_token _        = Nothing
 
--- varToken = tokenPrim show update_pos get_token where
---   get_token (Var p) = Just (Var p)
---   get_token _       = Nothing  
-
 beginToken = tokenPrim show update_pos get_token where
   get_token (Begin p) = Just (Begin p)
   get_token _         = Nothing
@@ -31,11 +27,7 @@ endToken = tokenPrim show update_pos get_token where
 semiColonToken = tokenPrim show update_pos get_token where
   get_token (SemiColon p) = Just (SemiColon p)
   get_token _             = Nothing
-
--- colonToken = tokenPrim show update_pos get_token where
---   get_token (Colon p) = Just (Colon p)
---   get_token _         = Nothing
-
+  
 assignToken = tokenPrim show update_pos get_token where
   get_token (Assign p) = Just (Assign p)
   get_token _          = Nothing
