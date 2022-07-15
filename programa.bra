@@ -1,3 +1,4 @@
 principal test {
   inteiro x = 8 + 2 + 4;
+  imprime(8);
 }
