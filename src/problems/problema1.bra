@@ -1,0 +1,8 @@
+principal problema1 {
+    decimal x = 10.0;
+    decimal y = 5.0;
+    decimal c = 2;
+
+    decimal result = x**2 - y + c;
+    imprimenl("" + result + " total");
+}

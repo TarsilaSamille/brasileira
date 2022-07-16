@@ -1,0 +1,4 @@
+principal test {
+    inteiro o = 0;
+    imprimenl("oi mund" + o);
+}

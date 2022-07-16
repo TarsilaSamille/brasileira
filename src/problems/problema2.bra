@@ -1,0 +1,33 @@
+principal problema2 {
+    inteiro intervalo_um = 0;
+    inteiro intervalo_dois = 0;
+    inteiro intervalo_tres = 0;
+    inteiro intervalo_quatro = 0;
+    inteiro input_usuario = 0;
+
+    enquanto (input_usuario >= 0){
+        input_usuario = leia();
+        se (input_usuario >= 0 e input_usuario <= 25){
+            intervalo_um = intervalo_um + 1;
+        } entao{
+            se (input_usuario >= 26 e input_usuario <= 50){
+                intervalo_dois = intervalo_dois + 1;
+            }entao{
+                se (input_usuario >= 51 e input_usuario <= 75){
+                    intervalo_tres = intervalo_tres + 1;
+                }entao{
+                    se (input_usuario >= 76 e input_usuario <= 100){
+                        intervalo_quatro = intervalo_quatro + 1;
+                    }entao {
+
+                    }
+                }
+            }
+        }
+    }
+
+    imprimenl("Intervalo [0, 25] possui " + intervalo_um + " numeros.");
+    imprimenl("Intervalo [26, 50] possui " + intervalo_dois + " numeros.");
+    imprimenl("Intervalo [51, 75] possui " + intervalo_tres + " numeros.");
+    imprimenl("Intervalo [76, 100] possui " + intervalo_quatro + " numeros.");
+}
