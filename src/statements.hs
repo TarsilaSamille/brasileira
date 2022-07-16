@@ -66,7 +66,7 @@ ioStm = do
 printStm :: ParsecT [Token] Memory IO(Statement)
 printStm = do
             _ <- (printToken)
-            _ <- (openRoundToken <?> "(")
+            _ <- (openRoundToken)
             e <- expression
             _ <- (closeRoundToken)
             _ <- (semiColonToken)
@@ -75,7 +75,7 @@ printStm = do
 printlnStm :: ParsecT [Token] Memory IO(Statement)
 printlnStm = do
             _ <- (printlnToken)
-            _ <- (openRoundToken <?> "(")
+            _ <- (openRoundToken)
             e <- expression
             _ <- (closeRoundToken)
             _ <- (semiColonToken)
@@ -85,8 +85,8 @@ readStm :: ParsecT [Token] Memory IO(Statement)
 readStm = do
             i <- idToken
             _ <- assignmentToken
-            _ <- (readToken <?> "read")
-            _ <- (openRoundToken <?> "(")
+            _ <- (readToken)
+            _ <- (openRoundToken)
             _ <- (closeRoundToken)
             _ <- (semiColonToken)
             return (Interpreter.Read i)
@@ -251,14 +251,14 @@ exprB0 = do
 
 ifStm :: ParsecT [Token] Memory IO(Statement)
 ifStm = do
-            _ <- (ifToken <?> "if")
+            _ <- (ifToken)
             _ <- openRoundToken
             b <- booleanExpression
             _ <- closeRoundToken
             _ <- (openCurlyToken)
             s1 <- many stmts
             _ <- (closeCurlyToken)
-            _ <- (elseToken <?> "else")
+            _ <- (elseToken)
             _ <- (openCurlyToken)
             s2 <- many stmts
             _ <- (closeCurlyToken)
