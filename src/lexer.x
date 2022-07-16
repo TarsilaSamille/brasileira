@@ -58,20 +58,6 @@ tokens :-
   ">=" { \p s -> MoreEqual (getLineColumn p) }
   ">" { \p s -> More (getLineColumn p) }
 
-  uint8 { \p s -> TypeUInt8 (getLineColumn p) }
-  uint16 { \p s -> TypeUInt16 (getLineColumn p) }
-  uint32 { \p s -> TypeUInt32 (getLineColumn p) }
-  uint64 { \p s -> TypeUInt64 (getLineColumn p) }
-  int8 { \p s -> TypeInt8 (getLineColumn p) }
-  int16 { \p s -> TypeInt16 (getLineColumn p) }
-  int32 { \p s -> TypeInt32 (getLineColumn p) }
-  int64 { \p s -> TypeInt64 (getLineColumn p) }
-  flaot16 { \p s -> TypeFloat16 (getLineColumn p) }
-  float32 { \p s -> TypeFloat32 (getLineColumn p) }
-  float64 { \p s -> TypeFloat64 (getLineColumn p) }
-  float128 { \p s -> TypeFloat128 (getLineColumn p) }
-  string { \p s -> TypeString (getLineColumn p) }
-  bool { \p s -> TypeBoolean (getLineColumn p) }
   (inteiro|decimal|texto|caracter|logico|matrix) { \p s -> PrimitiveType s (getLineColumn p)}
   True {\p s -> ValueBool True (getLineColumn p) }
   False {\p s -> ValueBool False (getLineColumn p) }
@@ -124,20 +110,6 @@ data Token =
            | Less (Int, Int)
            | MoreEqual (Int, Int)
            | More (Int, Int)
-           | TypeUInt8 (Int, Int)
-           | TypeUInt16 (Int, Int)
-           | TypeUInt32 (Int, Int)
-           | TypeUInt64 (Int, Int)
-           | TypeInt8 (Int, Int)
-           | TypeInt16 (Int, Int)
-           | TypeInt32 (Int, Int)
-           | TypeInt64 (Int, Int)
-           | TypeFloat16 (Int, Int)
-           | TypeFloat32 (Int, Int)
-           | TypeFloat64 (Int, Int)
-           | TypeFloat128 (Int, Int)
-           | TypeString (Int, Int)
-           | TypeBoolean (Int, Int)
            | ID String (Int, Int)
            | ValueBool Bool (Int, Int)
            | ValueInt Int (Int, Int)
