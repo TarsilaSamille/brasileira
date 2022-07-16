@@ -109,4 +109,4 @@ eval (ValueBool x p) (Plus _) (ValueString y _) = ValueString ((show x) ++ y) p
 eval _ _ _ = error "cannot evaluate this expression"
 
 getDefaultValue :: Token -> Token
-getDefaultValue (TypeInt8 (l, c)) = ValueInt 0 (l, c)
+getDefaultValue (PrimitiveType "inteiro" (l, c)) = ValueInt 0 (l, c)
