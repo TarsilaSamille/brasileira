@@ -19,27 +19,35 @@ program = do
             _ <- programToken 
             id <- (idToken) 
             _ <- (openCurlyToken)
-            d <- many (choice [(try stmts) <|> (try func)])
+            d <- many (choice [(try stmts) <|> (try function)])
             _ <- (closeCurlyToken)
             eof
             return (d)
 
 stmts :: ParsecT [Token] Memory IO(Statement)
 stmts = do
-          a <- choice [(try ioStm), (try varDeclaration), (try assign), (try ifStm), (try whileStm)]
+          a <- choice [(try ioStm), (try varDeclaration), (try function), (try assign), (try ifStm), (try whileStm)]
           return (a)
 
-func :: ParsecT [Token] Memory IO(Statement)
-func = do
+function :: ParsecT [Token] Memory IO(Statement)
+function = do
+         _ <- (functionToken)
          id <- (idToken)
          _ <- (openRoundToken)
+         a <- varDeclaration
          _ <- (closeRoundToken)
-         _ <- (colonToken)
          _ <- (openCurlyToken)
          s <- many stmts
          _ <- (closeCurlyToken)
          let cs = Chain s
          return (Interpreter.Function id cs)
+
+--varDecl :: ParsecT [Token] Memory IO(Statement)
+--varDecl = do
+--            _ <- (primitiveTypeToken)
+--            id <- (idToken)
+--            _ <- (semiColonToken)
+--            return (Interpreter.VarDecl id)
 
 varDeclaration :: ParsecT [Token] Memory IO(Statement)
 varDeclaration = do

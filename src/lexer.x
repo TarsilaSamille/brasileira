@@ -40,7 +40,7 @@ tokens :-
   pass { \p s -> Pass (getLineColumn p) }
   switch { \p s -> Switch (getLineColumn p) }
   case { \p s -> Case (getLineColumn p) }
-
+  funcao { \p s -> Function (getLineColumn p) }
   imprime { \p s -> Print (getLineColumn p) }
   imprimenl { \p s -> Println (getLineColumn p) }
   leia { \p s -> Read (getLineColumn p) }
@@ -95,6 +95,7 @@ data Token =
            | Pass (Int, Int)
            | Switch (Int, Int)
            | Case (Int, Int)
+           | Function (Int,Int)
            | Print (Int, Int)
            | Println (Int, Int)
            | Read (Int, Int)

@@ -57,6 +57,7 @@ data SExpression = SValue Lexer.Token
 
 data Statement = Assignment Lexer.Token Expression
                | VarDeclaration Lexer.Token Expression
+               | VarDecl Lexer.Token Expression
                | Print Expression
                | Println Expression
                | Read Lexer.Token

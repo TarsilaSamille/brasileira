@@ -1,0 +1,8 @@
+funcao soma(decimal a, decimal b){
+        imprimenl("retornando funcao")
+        retorne 2;
+}
+principal problema4 {
+    imprimenl("nao deu");
+    soma();
+}

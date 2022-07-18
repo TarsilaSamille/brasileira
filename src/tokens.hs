@@ -10,7 +10,7 @@ programToken = tokenPrim show update_pos get_token where
   get_token (Program p) = Just (Program p)
   get_token _           = Nothing
 
-primitiveTypeToken :: ParsecT [Token] u IO Token
+primitiveTypeToken :: ParsecT [Token] st IO Token
 primitiveTypeToken = tokenPrim show update_pos get_token where
     get_token (PrimitiveType s x) = Just (PrimitiveType s x)
     get_token _                 = Nothing
@@ -19,6 +19,11 @@ idToken :: ParsecT [Token] st IO (Token)
 idToken = tokenPrim show update_pos get_token where
     get_token (ID x p) = Just (ID x p)
     get_token _        = Nothing
+
+functionToken :: ParsecT [Token] st IO(Token)
+functionToken = tokenPrim show update_pos get_token where
+  get_token (Function p) = Just (Function p)
+  get_token _ = Nothing
 
 plusAssignmentToken :: ParsecT [Token] st IO (Token)
 plusAssignmentToken = tokenPrim show update_pos get_token where
