@@ -1,0 +1,40 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[lmargin=3cm, rmargin=2cm, bmargin=2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amsthm, amsfonts, amssymb, dsfont, mathtools}
+\usepackage{blindtext}
+
+\title{Projeto da Disciplina de Linguagem de Programação: Conceitos e Paradigmas}
+\author{Ana Luisa Estevam Dantas\\ Gdiael Souto Barros\\ Italo Bruno Brand Nardy\\ Tarsila Samille Santos da Silveira}
+\date{19 de julho 2022}
+
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section{Introdução}
+\begin{itemize}
+    \item \textbf{Visão Geral:}
+    A linguagem chamada Brasileira, tem o intuito de atender todo público alvo e por paradigma imperativo. É uma linguagem simples e leve implementada em Haskell.
+    \item \textbf{Tipos de dados primitivos:} inteiro, decimal, texto, caracter, logico e matrix.
+    \item \textbf{Alocação de variável:} Estática e dinâmica.
+    \item \textbf{Tipagem:} Estática
+    \item \textbf{Variáveis:} Escopo (Stack)\\
+        \textbf {Tipo:} String\\
+        \textbf {Tempo de vida:} A vinculação estática ocorre antes da execução e permanece inalterado durante a execução do programa\\
+        \item \textbf{Variáveis:} Escopo (Heap)\\
+        \textbf{Tipo:} String\\
+        \textbf{Tempo de vida:} São alocadas e liberadas por instruções explícitas, tem efeito durante a execução do programa.
+\end{itemize}
+
+\section{Design da implementação}
+\newpage
+\subsection{BNF}
+\includegraphics[width=16cm]{a1.png}\\
+\newpage
+\includegraphics[width=16cm]{h2.png}
+\end{document}
